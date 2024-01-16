@@ -1,0 +1,48 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/python
+{
+	"name": "Dev Container Practice",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"build": {
+		"dockerfile": "Dockerfile",
+		"context": "../",
+		"args": {
+			"CI_AUTH_TOKEN": "${localEnv:CI_AUTH_TOKEN}"
+		}
+	},
+	// Target need to be absolute path.
+	"mounts": [
+		"source=${localEnv:HOME}${localEnv:USERPROFILE}/.aws,target=/home/iceihehe/.aws,type=bind,consistency=cached"
+	],
+	"workspaceFolder": "/opt/us-app",
+	"workspaceMount": "source=${localWorkspaceFolder},target=/opt/us-app,type=bind",
+
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// forwardPorts is quite like docker run -p 127.0.0.1:8081:8081 ...
+	// "forwardPorts": [8081],
+	// appPort is quite like docker run -p 5000:5000 ...
+	"appPort": ["5000:5000"],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "pip install pytest",
+
+	// Configure tool-specific properties.
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-python.python",
+				"ms-python.vscode-pylance",
+				"ms-python.pylint"
+			]
+		}
+	},
+
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	"remoteUser": "iceihehe",
+	"remoteEnv": {
+		"TZ": "Asia/Tokyo"
+	}
+}

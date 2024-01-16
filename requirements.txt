@@ -1,0 +1,6 @@
+flask
+gunicorn
+gevent
+
+# --extra-index-url=https://__token__:${CI_AUTH_TOKEN}@internal-gitlab-domain/api/v4/projects/<projectid>/packages/pypi/simple
+# some-package
