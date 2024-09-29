@@ -1,0 +1,9 @@
+services:
+  sanityclient:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+networks:
+  default:
+    name: devcontainer

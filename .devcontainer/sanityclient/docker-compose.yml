@@ -1,0 +1,11 @@
+services:
+  sanityclient:
+    build:
+      context: .
+      target: develop
+    image: devcontainer-practice/sanityclient
+
+    volumes:
+      - /mnt/d/Codes/me/devcontainer-practice:/opt:cached
+
+    command: /bin/sh -c "while sleep 1000; do :; done"

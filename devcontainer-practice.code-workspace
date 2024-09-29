@@ -1,0 +1,14 @@
+{
+    "folders": [
+        {
+            "path": "webserver"
+        },
+        {
+            "path": "sanityclient"
+        },
+        {
+            "path": ".",
+            "name": "ROOT"
+        }
+    ]
+}
